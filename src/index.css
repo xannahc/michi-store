@@ -1,0 +1,38 @@
+:root {
+  --michi-orange: #ff9f43;
+  --michi-orange-hover: #f58823;
+  --michi-cream: #fff7e0;
+  --michi-card: #fffdf7;
+  --michi-blue: #b8e1f5;
+  --michi-blue-soft: #d9effa;
+  --michi-charcoal: #2d3436;
+  --michi-pink: #f7a8b8;
+  --michi-muted: #5c666a;
+  --michi-shadow: 0 6px 18px rgba(45, 52, 54, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--michi-cream) !important;
+  color: var(--michi-charcoal);
+  font-family: "Nunito", sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Fredoka", sans-serif;
+  color: var(--michi-charcoal);
+}
+
+a {
+  color: inherit;
+}

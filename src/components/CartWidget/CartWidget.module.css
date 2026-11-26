@@ -1,0 +1,36 @@
+.botonCarrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--michi-orange);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--michi-charcoal);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.botonCarrito:hover {
+  background-color: var(--michi-orange-hover);
+  transform: translateY(-1px);
+}
+
+.carro {
+  width: 22px;
+  height: 22px;
+}
+
+.cantidad {
+  background-color: var(--michi-charcoal);
+  color: #ffffff;
+  border-radius: 999px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

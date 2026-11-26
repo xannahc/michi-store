@@ -1,0 +1,268 @@
+Entrega Final: E-commerce completo desplegado en Vercel
+Llegaste a la etapa final del curso. A lo largo de los diferentes módulos construiste progresivamente un e-commerce con React, incorporando componentes reutilizables, navegación, manejo de estado global, carrito de compras, autenticación de usuarios, persistencia de datos con Firebase y generación de órdenes.
+
+Esta instancia no incorpora nuevos conceptos técnicos. El objetivo es integrar, revisar y publicar todo lo trabajado para presentar una aplicación completa, funcional y accesible desde internet.
+
+El proyecto no debe funcionar únicamente en tu computadora. Debe estar desplegado en Vercel y disponible mediante una URL pública que permita recorrer y probar todas sus funcionalidades.
+
+Recorrido y cadena de pre-entregas
+Diagrama conceptual de la evolución de un proyecto e-commerce.
+
+El Proyecto Final es el resultado de las siete pre-entregas desarrolladas durante el curso.
+
+La primera pre-entrega estableció la estructura base del proyecto mediante React y Vite.
+La segunda incorporó los componentes principales de la interfaz, como Navbar, CartWidget e ItemListContainer.
+La tercera permitió construir el listado de productos mediante componentes reutilizables y datos obtenidos de manera asíncrona.
+La cuarta incorporó la vista de detalle de cada producto y la selección de cantidades.
+La quinta agregó la navegación con React Router para acceder al catálogo, las categorías, el detalle de producto, el carrito y el checkout.
+La sexta implementó el carrito de compras mediante Context, incluyendo la posibilidad de agregar productos, eliminarlos, vaciar el carrito y calcular cantidades y totales.
+La séptima integró Cloud Firestore, Firebase Authentication, AuthContext, registro e inicio de sesión, checkout con renderizado condicional y generación de órdenes.
+En esta Entrega Final deberás integrar, revisar y publicar todas estas funcionalidades dentro de una única aplicación.
+Qué construyo en esta entrega
+El resultado final debe ser un e-commerce completo desarrollado con React y publicado en Vercel.
+La aplicación debe permitir que el usuario navegue por el catálogo general, filtre productos por categoría, acceda al detalle de cada producto y seleccione una cantidad respetando el stock disponible.
+El usuario debe poder agregar productos al carrito, consultar los productos seleccionados, eliminar productos, vaciar el carrito y visualizar tanto la cantidad total de unidades como el precio total de la compra.
+La aplicación también debe permitir que el usuario se registre con email y contraseña, inicie sesión, mantenga su sesión al recargar la página y cierre sesión correctamente.
+La vista de checkout debe utilizar renderizado condicional. Si no existe un usuario autenticado, debe mostrarse un formulario de inicio de sesión o una indicación clara para que se autentique. Si el usuario está autenticado, debe mostrarse el formulario necesario para completar la compra.
+Al finalizar la operación, la aplicación debe crear una orden en Firestore, mostrar el ID generado como confirmación y vaciar el carrito únicamente después de que la orden se haya guardado correctamente.
+Los productos deben obtenerse desde Cloud Firestore. No deben continuar cargándose desde archivos locales, arrays internos, promesas simuladas o servicios de prueba.
+Criterios de aceptación globales
+Aplicación desplegada
+La aplicación debe estar publicada en Vercel y disponible mediante una URL pública.
+
+El enlace debe abrir correctamente y no debe mostrar una pantalla en blanco, errores de carga ni una página inexistente.
+
+Todas las funcionalidades solicitadas deben poder probarse desde la aplicación publicada y no solamente desde el entorno local.
+
+Navegación con React Router
+La aplicación debe utilizar react-router-dom para administrar la navegación entre las distintas vistas.
+
+Como mínimo, deben existir rutas equivalentes al catálogo general, las categorías, el detalle de producto, el carrito, el inicio de sesión, el registro y el checkout.
+
+La navegación debe realizarse sin recargar completamente la página.
+
+Las rutas también deben funcionar cuando el usuario actualiza el navegador desde una dirección interna, como el detalle de un producto, el carrito o el checkout.
+
+Catálogo de productos
+La aplicación debe mostrar un listado general de productos obtenidos desde Cloud Firestore.
+
+El usuario debe poder navegar entre las distintas categorías y visualizar únicamente los productos correspondientes a la categoría seleccionada.
+
+Si una categoría no contiene productos, la aplicación debe mostrar un mensaje claro en lugar de dejar una pantalla vacía.
+
+Detalle de producto
+Cada producto debe contar con una vista de detalle accesible mediante su identificador.
+
+La información debe obtenerse desde Cloud Firestore e incluir los datos necesarios para comprender el producto, como nombre, descripción, precio, imagen y stock.
+
+Si el producto solicitado no existe, la aplicación debe informar la situación de manera clara.
+
+Carrito de compras
+El usuario debe poder agregar productos al carrito desde la vista de detalle.
+
+La cantidad seleccionada no debe superar el stock disponible.
+
+Dentro del carrito deben mostrarse los productos elegidos, sus cantidades, sus precios y el total de la compra.
+
+El usuario debe poder eliminar un producto o vaciar completamente el carrito.
+
+El contenido del carrito debe mantenerse mientras el usuario navega entre las diferentes vistas y durante el proceso de inicio de sesión.
+
+Registro e inicio de sesión
+La aplicación debe permitir registrar un usuario mediante email y contraseña.
+
+También debe permitir iniciar sesión con una cuenta existente y cerrar la sesión correctamente.
+
+El estado del usuario debe mantenerse al recargar la página.
+
+Cuando exista un usuario autenticado, la interfaz debe mostrar su email o una referencia visible a su sesión.
+
+Los errores de registro e inicio de sesión deben comunicarse mediante mensajes comprensibles.
+
+Checkout con renderizado condicional
+La vista de checkout debe cambiar su contenido según el estado del usuario.
+
+Si el usuario no inició sesión, debe mostrarse el login o una indicación para que se autentique.
+
+Si el usuario ya inició sesión, debe mostrarse el formulario de checkout.
+
+El usuario debe poder iniciar sesión y continuar con la compra sin perder los productos agregados al carrito.
+
+La aplicación no debe generar una orden si el carrito está vacío o si el formulario contiene datos obligatorios incompletos.
+
+Generación de órdenes
+Al confirmar la compra, la aplicación debe crear una orden dentro de una colección orders en Firestore.
+
+La orden debe incluir el ID o email del usuario autenticado, los datos del comprador o de entrega, los productos seleccionados, las cantidades, los precios, el total y la fecha de creación.
+
+Una vez creada la orden, la aplicación debe mostrar el ID generado por Firebase como confirmación.
+
+El carrito debe vaciarse únicamente después de que la orden se haya registrado correctamente.
+
+Si ocurre un error, el carrito debe conservar sus productos y la aplicación debe informar lo sucedido.
+
+Estados de carga y manejo de errores
+La aplicación debe mostrar una respuesta visual mientras se cargan productos, se consulta un detalle, se valida la sesión o se genera una orden.
+
+Podrán utilizarse loaders, spinners, skeletons o mensajes de carga.
+
+También deben contemplarse errores durante la carga del catálogo, la consulta de productos, el registro, el inicio de sesión y la creación de órdenes.
+
+No deben quedar pantallas vacías ni procesos bloqueados sin explicación.
+
+Diseño y experiencia de uso
+La aplicación debe presentar una interfaz clara, ordenada y coherente con la temática elegida para el e-commerce.
+
+Debe poder utilizarse correctamente tanto en pantallas de escritorio como en dispositivos móviles.
+
+No debe presentar elementos superpuestos, contenido cortado, textos ilegibles ni botones inaccesibles.
+
+Los mensajes, formularios y acciones principales deben ser fáciles de identificar.
+
+Funcionamiento general
+La aplicación debe permitir completar el recorrido completo de compra.
+
+El usuario debe poder ingresar al catálogo, seleccionar un producto, elegir una cantidad, agregarlo al carrito, iniciar sesión, completar el formulario de checkout, generar la orden y visualizar el ID de confirmación.
+
+No deben aparecer errores visibles en la consola durante el uso normal de la aplicación.
+
+Entregable
+Deberás entregar un único enlace: la URL pública de tu e-commerce desplegado en Vercel.
+
+Ejemplo:
+
+https://nombre-del-proyecto.vercel.app
+
+No se debe entregar un repositorio, un archivo PDF, un documento ni capturas de pantalla.
+
+El enlace debe permitir acceder directamente a la aplicación y probar todas las funcionalidades solicitadas.
+
+Configuración de producción
+Las variables de entorno utilizadas para conectar la aplicación con Firebase deben estar configuradas dentro del proyecto de Vercel.
+
+La URL generada por Vercel debe estar agregada dentro de los dominios autorizados de Firebase Authentication para que el registro y el inicio de sesión funcionen correctamente en producción.
+
+También debe verificarse que las rutas internas de la aplicación funcionen cuando el usuario actualiza el navegador.
+
+Verificación antes de entregar
+Antes de enviar la URL, realizá un recorrido completo por la aplicación desplegada.
+
+Comprobá que la página inicial cargue correctamente, que los productos se obtengan desde Firestore y que el filtrado por categoría funcione.
+
+Verificá que cada producto tenga una vista de detalle, que pueda agregarse al carrito y que no sea posible seleccionar una cantidad superior al stock disponible.
+
+Revisá que el carrito muestre correctamente sus productos, cantidades y total, y que permita eliminar elementos o vaciarlo.
+
+Probá el registro, el inicio de sesión, la persistencia de la sesión al recargar y el cierre de sesión.
+
+Ingresá al checkout sin iniciar sesión y comprobá que se muestre el contenido correspondiente para autenticarse.
+
+Luego, iniciá sesión y verificá que aparezca el formulario de compra sin perder el contenido del carrito.
+
+Finalmente, generá una orden y confirmá que se registre en Firestore, que se muestre el ID correspondiente y que el carrito se vacíe después de una operación exitosa.
+
+También verificá que las rutas funcionen al actualizar el navegador y que la aplicación pueda utilizarse correctamente desde un dispositivo móvil.
+
+Errores comunes que debés evitar
+Entregar una URL local
+No se debe entregar una dirección como localhost:5173. El enlace debe corresponder a la aplicación publicada en Vercel.
+
+Variables de entorno sin configurar
+La aplicación puede funcionar localmente y fallar en Vercel si las variables necesarias para Firebase no están configuradas en producción.
+
+Dominio no autorizado en Firebase
+El registro o inicio de sesión puede fallar si la URL de Vercel no fue agregada dentro de los dominios autorizados de Firebase Authentication.
+
+Productos simulados
+Los productos deben obtenerse desde Firestore y no desde arrays locales o promesas simuladas.
+
+Rutas rotas en producción
+Las vistas internas deben funcionar incluso cuando el usuario actualiza el navegador desde una ruta como el detalle de producto, el carrito o el checkout.
+
+Checkout sin renderizado condicional
+La vista debe comprobar el estado del usuario. Si no inició sesión, debe mostrar el acceso para autenticarse. Si está autenticado, debe mostrar el formulario de compra.
+
+Pérdida del carrito al iniciar sesión
+El usuario debe poder autenticarse y continuar con la compra sin perder los productos seleccionados.
+
+Falta de control de stock
+No debe permitirse agregar una cantidad superior al stock disponible.
+
+Órdenes incompletas
+La orden debe incluir la información del usuario, los datos de entrega, los productos, las cantidades, el total y la fecha de creación.
+
+Vaciar el carrito antes de tiempo
+El carrito debe vaciarse solamente después de que Firebase confirme la creación de la orden.
+
+Falta de feedback
+Mientras la aplicación espera una respuesta de Firebase, debe mostrar un estado de carga o procesamiento.
+
+Código o mensajes de prueba visibles
+La versión publicada no debe mostrar textos temporales, botones sin funcionamiento, mensajes de prueba ni errores en la consola.
+
+Cómo se completa el Proyecto Final
+Esta entrega reúne todo el recorrido realizado durante el curso.
+
+El proyecto comenzó con una estructura básica creada con Vite y evolucionó hasta convertirse en una aplicación completa con componentes reutilizables, navegación, estado global, autenticación, persistencia de datos, carrito de compras, generación de órdenes y despliegue en producción.
+
+El resultado final debe demostrar que comprendés cómo construir una aplicación moderna con React, integrar sus funcionalidades con Firebase y publicarla en Vercel para que pueda utilizarse fuera del entorno local.
+
+La URL entregada representará el producto final del curso y podrá incorporarse a tu portafolio como evidencia concreta de las habilidades desarrolladas.
+
+URL pública de la aplicación desplegada en Vercel, con todas las funcionalidades desarrolladas durante las pre-entregas correctamente integradas.
+Entregable
+
+Objetivo
+Finalizar el e-commerce, verificar su funcionamiento completo y desplegarlo en Vercel.
+
+Instrucciones paso a paso
+Integración final
+Verificá que los productos y sus detalles se obtengan desde Cloud Firestore.
+
+Comprobá que el carrito funcione mediante CartContext y permita agregar, eliminar y vaciar productos, además de calcular cantidades y totales.
+
+Revisá que el registro, el inicio de sesión y el cierre de sesión funcionen correctamente.
+
+En la vista de checkout, utilizá renderizado condicional. Si el usuario no inició sesión, debe mostrarse el acceso para autenticarse. Si está autenticado, debe mostrarse el formulario de compra.
+
+Al finalizar la compra, guardá la orden en la colección orders de Firestore y mostrá el ID generado.
+
+Revisión del proyecto
+Eliminá código, componentes, imports y mensajes de consola que no se utilicen.
+
+Agregá estados de carga y mensajes de error cuando corresponda.
+
+Ejecutá npm run build y corregí cualquier error antes de realizar el despliegue.
+
+Despliegue en Vercel
+Conectá Vercel con GitHub e importá el proyecto.
+
+Configurá en Vercel las variables de entorno utilizadas para Firebase.
+
+Realizá el despliegue y accedé a la URL pública generada.
+
+Probá el recorrido completo desde la aplicación publicada:
+
+Catálogo → Detalle → Carrito → Inicio de sesión → Checkout → Confirmación de compra.
+
+Criterios de éxito
+La aplicación debe cargar correctamente desde la URL de Vercel.
+
+Los productos deben obtenerse desde Firestore.
+
+El registro y el inicio de sesión deben funcionar.
+
+El carrito debe mantener correctamente sus productos.
+
+El checkout debe mostrar su contenido según el estado del usuario.
+
+La compra debe generar una orden en Firestore y mostrar su ID.
+
+Las rutas deben funcionar correctamente en producción.
+
+Formato de entrega
+Entregá únicamente la URL pública de la aplicación desplegada en Vercel.
+
+Ejemplo:
+
+https://nombre-del-proyecto.vercel.app

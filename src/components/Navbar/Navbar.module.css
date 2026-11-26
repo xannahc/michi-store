@@ -1,0 +1,165 @@
+.header {
+  background-color: var(--michi-card);
+  border-bottom: 2px solid var(--michi-charcoal);
+  box-shadow: 0 4px 14px rgba(45, 52, 54, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 28px;
+}
+
+.navb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--michi-charcoal);
+}
+
+.logo img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--michi-charcoal);
+}
+
+.titulo {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--michi-charcoal);
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--michi-charcoal);
+  font-weight: 700;
+  font-size: 0.98rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: var(--michi-blue-soft);
+  color: var(--michi-charcoal);
+}
+
+.active {
+  background-color: var(--michi-orange);
+  color: var(--michi-charcoal);
+  border: 2px solid var(--michi-charcoal);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.authChecking {
+  font-size: 0.88rem;
+  color: var(--michi-muted);
+  font-weight: 600;
+}
+
+.authLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.loginLink,
+.registerLink {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 2px solid var(--michi-charcoal);
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.loginLink {
+  background-color: var(--michi-blue);
+  color: var(--michi-charcoal);
+}
+
+.loginLink:hover {
+  background-color: #9ed4ef;
+}
+
+.registerLink {
+  background-color: var(--michi-pink);
+  color: var(--michi-charcoal);
+}
+
+.registerLink:hover {
+  background-color: #f392a6;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--michi-blue-soft);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 999px;
+  padding: 4px 6px 4px 12px;
+}
+
+.userEmail {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--michi-charcoal);
+  max-width: 170px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logoutBtn {
+  background-color: var(--michi-charcoal);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  background-color: #434c4f;
+}
+
+@media (max-width: 768px) {
+  .navb {
+    justify-content: center;
+  }
+
+  .userEmail {
+    max-width: 130px;
+  }
+}

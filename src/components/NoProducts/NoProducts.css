@@ -1,0 +1,38 @@
+.containerCardi {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.emptyCartCard {
+  background-color: var(--michi-card);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--michi-shadow);
+}
+
+.emptyCartCard h2 {
+  margin-bottom: 10px;
+}
+
+.emptyCartCard p {
+  color: var(--michi-muted);
+  margin-bottom: 20px;
+}
+
+.emptyCartBtn {
+  display: inline-block;
+  background-color: var(--michi-orange);
+  color: var(--michi-charcoal);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.emptyCartBtn:hover {
+  background-color: var(--michi-orange-hover);
+}

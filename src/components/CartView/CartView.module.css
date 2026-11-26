@@ -1,0 +1,127 @@
+.cartWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px 50px;
+}
+
+.cartlist {
+  background-color: var(--michi-card);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: var(--michi-shadow);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed rgba(45, 52, 54, 0.25);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.countBadge {
+  background-color: var(--michi-blue-soft);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.summary {
+  border-top: 2px solid var(--michi-charcoal);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.totals p {
+  margin: 0 0 4px;
+  color: var(--michi-muted);
+  font-weight: 700;
+}
+
+.totals h3 {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.clearBtn,
+.continueLink,
+.checkoutLink {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--michi-charcoal);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--michi-charcoal);
+  transition: background-color 0.2s ease;
+}
+
+.clearBtn {
+  background-color: var(--michi-pink);
+}
+
+.clearBtn:hover {
+  background-color: #f392a6;
+}
+
+.continueLink {
+  background-color: var(--michi-blue);
+}
+
+.continueLink:hover {
+  background-color: #9ed4ef;
+}
+
+.checkoutLink {
+  background-color: var(--michi-orange);
+}
+
+.checkoutLink:hover {
+  background-color: var(--michi-orange-hover);
+}
+
+@media (max-width: 640px) {
+  .cartlist {
+    padding: 18px;
+  }
+
+  .actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .clearBtn,
+  .continueLink,
+  .checkoutLink {
+    width: 100%;
+    text-align: center;
+  }
+}

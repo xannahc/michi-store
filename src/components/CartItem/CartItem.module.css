@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: 2px solid var(--michi-charcoal);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 220px;
+}
+
+.thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1.5px solid var(--michi-charcoal);
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--michi-charcoal);
+}
+
+.name:hover {
+  text-decoration: underline;
+}
+
+.unitPrice {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: var(--michi-muted);
+  font-weight: 600;
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.qty {
+  background-color: var(--michi-cream);
+  border: 1.5px solid var(--michi-charcoal);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.subtotal {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--michi-charcoal);
+}
+
+.botonEliminar {
+  background-color: var(--michi-pink);
+  color: var(--michi-charcoal);
+  border: 2px solid var(--michi-charcoal);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.botonEliminar:hover {
+  background-color: #f392a6;
+}
